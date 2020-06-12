@@ -28,11 +28,39 @@ test("renders first name input form without crashing", () => {
 test("can submit form", () => {
   const { getByTestId } = render(<App />);
 
-  const submitButton = getByTestId("submit")
+  const submitButton = getByTestId("submit");
 
   fireEvent.submit(submitButton);
 })
 
-test("can type in input form", () => {
-  
+test("can type in first name input form", () => {
+  const { getByTestId } = render(<App />);
+
+  const firstNameInput = getByTestId("first-name-input");
+
+  fireEvent.input(firstNameInput, "Joy");
+})
+
+test("can type in last name input form", () => {
+  const { getByTestId } = render(<App />);
+
+  const lastNameInput = getByTestId("last-name-input");
+
+  fireEvent.input(lastNameInput, "Smith");
+})
+
+test("can type in email input form", () => {
+  const { getByTestId } = render(<App />);
+
+  const emailInput = getByTestId("email-input");
+
+  fireEvent.input(emailInput, "js@gmail.com");
+})
+
+test("can type in message input form", () => {
+  const { getByTestId } = render(<App />);
+
+  const messageInput = getByTestId("message-input");
+
+  fireEvent.input(messageInput, "This is confusing to me");
 })
