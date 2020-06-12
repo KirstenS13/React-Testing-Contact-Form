@@ -45,7 +45,7 @@ const ContactForm = () => {
           </label>
           <input name="email" ref={register({ required: true })} data-testid="email-input"/>
           {errors.email && (
-            <p>Looks like there was an error: {errors.email.type}</p>
+            <p data-testid="first-name-error">Looks like there was an error: {errors.email.type}</p>
           )}
         </div>
         <div>

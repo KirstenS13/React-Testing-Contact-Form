@@ -39,6 +39,8 @@ test("can type in first name input form", () => {
   const firstNameInput = getByTestId("first-name-input");
 
   fireEvent.input(firstNameInput, "Joy");
+
+  expect(firstNameInput).toEqual("Joy");
 })
 
 test("can type in last name input form", () => {
@@ -47,6 +49,8 @@ test("can type in last name input form", () => {
   const lastNameInput = getByTestId("last-name-input");
 
   fireEvent.input(lastNameInput, "Smith");
+
+  expect(lastNameInput).toEqual("Smith");
 })
 
 test("can type in email input form", () => {
@@ -55,6 +59,8 @@ test("can type in email input form", () => {
   const emailInput = getByTestId("email-input");
 
   fireEvent.input(emailInput, "js@gmail.com");
+
+  expect(emailInput).toEqual("js@gmail.com");
 })
 
 test("can type in message input form", () => {
@@ -63,4 +69,18 @@ test("can type in message input form", () => {
   const messageInput = getByTestId("message-input");
 
   fireEvent.input(messageInput, "This is confusing to me");
+
+  expect(messageInput).toEqual("This is confusing to me");
+})
+
+test("can type more than 3 letters in first name input form", () => {
+  const { getByTestId } = render(<App />);
+
+  const firstNameInput = getByTestId("first-name-input");
+
+  fireEvent.input(firstNameInput, "Kirsten");
+
+  const firstNameError = getByTestId("first-name-error");
+
+  expect(firstNameError).toEqual("");
 })
