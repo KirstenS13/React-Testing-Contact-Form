@@ -22,7 +22,7 @@ const ContactForm = () => {
             data-testid="first-name-input"
           />
           {errors.firstName && (
-            <p>Looks like there was an error: {errors.firstName.type}</p>
+            <p data-testid="first-name-error">Looks like there was an error: {errors.firstName.type}</p>
           )}
         </div>
 
